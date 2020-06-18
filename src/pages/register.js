@@ -79,16 +79,16 @@ const RegisterForm = ({handleSubmit}) => {
         <form onSubmit={handleSubmit(handleSubmitForm)} className={classes.form}>
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>
-              <Field component={TextField} autoComplete="fname" name="firstname" variant="outlined" required fullWidth label="First Name" autoFocus />
+              <Field component={TextField} autoComplete="fname" name="firstname" variant="outlined" required fullWidth label="Nombre Name" autoFocus />
             </Grid>
             <Grid item xs={12} sm={6}>
-              <Field component={TextField} variant="outlined" required fullWidth label="Last Name" name="lastname" autoComplete="lname" />
+              <Field component={TextField} variant="outlined" required fullWidth label="Apellido" name="lastname" autoComplete="lname" />
             </Grid>
             <Grid item xs={12}>
-              <Field component={TextField} error={registerReducer.emailError} helperText={ registerReducer.emailError ? "El correo ya existe, intente con otro." : false } variant="outlined" required fullWidth label="Email Address" name="email" autoComplete="email" />
+              <Field component={TextField} error={registerReducer.emailError} helperText={ registerReducer.emailError ? "El correo ya existe, intente con otro." : false } variant="outlined" required fullWidth label="Correo Electronico" name="email" autoComplete="email" />
             </Grid>
             <Grid item xs={12}>
-              <Field component={TextField} variant="outlined" required fullWidth name="password" label="Password" type="password" id="password" autoComplete="current-password" />
+              <Field component={TextField} variant="outlined" required fullWidth name="password" label="Contraseña" type="password" autoComplete="current-password" />
             </Grid>
             <Grid item xs={12}>
               <FormControlLabel checked={check} onChange={e => setCheck(e.target.checked)} control={<Checkbox value="allowExtraEmails" color="primary" />} label="Acepto los terminos y condiciones" />

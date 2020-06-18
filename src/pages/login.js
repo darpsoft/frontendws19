@@ -63,8 +63,8 @@ const LoginForm = ({handleSubmit}) => {
         <Avatar className={classes.avatar}>C19</Avatar>
         <Typography component="h1" variant="h5">Iniciar Sesión</Typography>
         <form onSubmit={handleSubmit(handleSubmitForm)} className={classes.form}>
-          <Field component={TextField} error={loginReducer.loginError} helperText={ loginReducer.loginError ? "Correo o Contraseña incorrecta" : false } variant="outlined" margin="normal" required fullWidth label="Email Address" name="email" type="email" autoComplete="email" autoFocus />
-          <Field component={TextField} error={loginReducer.loginError} variant="outlined" margin="normal" required fullWidth label="Password" name="password" type="password" autoComplete="current-password" />
+          <Field component={TextField} error={loginReducer.loginError} helperText={ loginReducer.loginError ? "Correo o Contraseña incorrecta" : false } variant="outlined" margin="normal" required fullWidth label="Correo Electronico" name="email" type="email" autoComplete="email" autoFocus />
+          <Field component={TextField} error={loginReducer.loginError} variant="outlined" margin="normal" required fullWidth label="Contraseña" name="password" type="password" autoComplete="current-password" />
           <Button type="submit" fullWidth variant="contained" color="primary" className={classes.submit} >
             { loginReducer.loading ? <CircularProgress color="inherit" size={24} /> : 'Iniciar Sesión' }
           </Button>

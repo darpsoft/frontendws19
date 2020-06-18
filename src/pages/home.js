@@ -128,7 +128,7 @@ const HomePage = ({ covidReducer, getStartCovid, favoritesReducer, updateFavorit
               </TableRow>
             </TableHead>
             <TableBody>
-              { favoritesReducer.Countries.length === 0 ? <LoadingItem /> : null }
+              { covidReducer.Countries.length === 0 ? <LoadingItem /> : null }
               { covidReducer.Countries.map((element, index) => <ElementTable key={index} element={element} />) }
             </TableBody>
           </Table>
