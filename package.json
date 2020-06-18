@@ -4,9 +4,9 @@
   "description": "Aplicación simple de visualizacion de estadisticas del Covid-19 - Pedro Fuentes",
   "main": "src/router/index.js",
   "scripts": {
+    "start": "next start -p $PORT",
     "dev": "next",
     "build": "next build",
-    "start": "next start",
     "export": "next export"
   },
   "author": "Pedro Fuentes",
