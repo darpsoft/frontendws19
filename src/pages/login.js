@@ -1,16 +1,12 @@
+import Router from 'next/router'
 import { makeStyles } from '@material-ui/core/styles'
-import Avatar from '@material-ui/core/Avatar'
-import Button from '@material-ui/core/Button'
-import CssBaseline from '@material-ui/core/CssBaseline'
-import Link from '@material-ui/core/Link'
-import Grid from '@material-ui/core/Grid'
-import Box from '@material-ui/core/Box'
-import Typography from '@material-ui/core/Typography'
-import Container from '@material-ui/core/Container'
+import Link from 'next/link'
 import TextField from '../components/TextField'
+import { CircularProgress, Paper, Avatar, Button, CssBaseline, Grid, Box, Typography, Container } from '@material-ui/core'
+import LinkMaterial  from '@material-ui/core/Link'
 
-import { reduxForm, Field } from 'redux-form'
-import storeReducer from '../store'
+import { useSelector } from "react-redux"
+import { reduxForm, Field, SubmissionError } from 'redux-form'
 
 function Copyright() {
   return (
@@ -42,29 +38,41 @@ const useStyles = makeStyles((theme) => {
   }
 })
 
-const LoginForm = (props) => {
+const LoginForm = ({handleSubmit}) => {
   const classes = useStyles()
+  const loginReducer = useSelector(state => state.loginReducer)
 
-  const handleSubmit = async (payload, dispatch) => {
-    await dispatch({type: 'VERIFY_LOGIN_START', payload})
+  const onSubmit = (payload, dispatch) => {
+    return new Promise((resolve, reject) => {
+      dispatch({type: 'VERIFY_LOGIN_START', payload, resolve, reject })
+    }).catch((error) => {
+      throw new SubmissionError(error)
+    })
   }
-  
+
+  const handleSubmitForm = async (payload, dispatch) => {
+     await onSubmit(payload, dispatch).then(_ => {
+      Router.replace('/home')
+     })
+  }
+
   return (
     <Container component="main" maxWidth="xs">
       <CssBaseline />
       <div className={classes.paper}>
         <Avatar className={classes.avatar}>C19</Avatar>
-        <Typography component="h1" variant="h5">Sign in</Typography>
-        <form onSubmit={props.handleSubmit(handleSubmit)} className={classes.form}>
-          <Field component={TextField} variant="outlined" margin="normal" required fullWidth label="Email Address" name="email" type="email" autoComplete="email" autoFocus />
-          <Field component={TextField} variant="outlined" margin="normal" required fullWidth label="Password" name="password" type="password" autoComplete="current-password" />
-          <Button type="submit" fullWidth variant="contained" color="primary" className={classes.submit}>Sign In</Button>
+        <Typography component="h1" variant="h5">Iniciar Sesión</Typography>
+        <form onSubmit={handleSubmit(handleSubmitForm)} className={classes.form}>
+          <Field component={TextField} error={loginReducer.loginError} helperText={ loginReducer.loginError ? "Correo o Contraseña incorrecta" : false } variant="outlined" margin="normal" required fullWidth label="Email Address" name="email" type="email" autoComplete="email" autoFocus />
+          <Field component={TextField} error={loginReducer.loginError} variant="outlined" margin="normal" required fullWidth label="Password" name="password" type="password" autoComplete="current-password" />
+          <Button type="submit" fullWidth variant="contained" color="primary" className={classes.submit} >
+            { loginReducer.loading ? <CircularProgress color="inherit" size={24} /> : 'Iniciar Sesión' }
+          </Button>
           <Grid container>
-            <Grid item xs>
-              <Link href="#" variant="body2">Forgot password?</Link>
-            </Grid>
             <Grid item>
-              <Link href="#" variant="body2">Don't have an account? Sign Up</Link>
+              <Link href="/register">
+                <LinkMaterial href="" variant="body2">Crear una cuenta nueva</LinkMaterial>
+              </Link>
             </Grid>
           </Grid>
         </form>
@@ -76,4 +84,4 @@ const LoginForm = (props) => {
   )
 }
 
-export default reduxForm({ form: 'LoginForm' })(LoginForm)
+export default reduxForm({ form: 'LoginForm'})(LoginForm)

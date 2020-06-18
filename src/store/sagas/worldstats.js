@@ -15,7 +15,6 @@ function* getCovid ({ payload }){
     yield put({type: CHANGE_STATE_APP, payload: { loading: false }})
   } catch (error) {
     yield put({type: CHANGE_STATE_APP, payload: { loading: false }})
-    console.log(error)
   }
 }
 

@@ -9,12 +9,30 @@ const stateAppConstanst = {
 }
 
 const loginConstants = {
-  email: '',
-  password: ''
+  loading: false,
+  loginError: false
+}
+
+const registerConstants = {
+  loading: false,
+  emailError: false
+}
+
+const userDataConstants = {
+  firstname: '',
+  lastname: '',
+  email: ''
+}
+
+const favoritesConstans = {
+  Countries: []
 }
 
 export {
   covidConstanst,
   stateAppConstanst,
-  loginConstants
+  loginConstants,
+  userDataConstants,
+  registerConstants,
+  favoritesConstans
 }

@@ -5,10 +5,16 @@ import { reducer as FormReducer } from 'redux-form'
 import covidReducer from './covidReducer'
 import stateAppReducer from './stateAppReducer'
 import loginReducer from './loginReducer'
+import userDataReducer from './userDataReducer'
+import registerReducer from './registerReducer'
+import favoritesReducer from './favoritesReducer'
 
 export default combineReducers({
   form: FormReducer,
   covidReducer,
   stateAppReducer,
-  loginReducer
+  loginReducer,
+  userDataReducer,
+  registerReducer,
+  favoritesReducer
 })

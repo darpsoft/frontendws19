@@ -1,16 +1,26 @@
 import { put, call, takeLatest } from 'redux-saga/effects'
-import { VERIFY_LOGIN_START, CHANGE_STATE_APP } from '../actions'
+import { addCookies } from '../../cookies'
+import { VERIFY_LOGIN_START, VERIFY_LOGIN_FAILED, VERIFY_LOGIN_SUCCESS, UPDATE_USER_DATA  } from '../actions'
 import fetchAPI from '../fetch'
 
-function* listeningLogin ({ payload }){
+function* listeningLogin ({ payload, resolve, reject }){
   try {
-    yield put({type: CHANGE_STATE_APP, payload: { loading: true }})
     const fetch = yield call(fetchAPI, 'post', 'https://ws19.herokuapp.com/loginUser', payload)
-    console.log(fetch)
-    // yield put({type: GET_SUCCESS_COVID, payload: { data: fetch }})
-    // yield put({type: CHANGE_STATE_APP, payload: { loading: false }})
+    if(fetch.code !== 200){ 
+      yield put({ type: VERIFY_LOGIN_FAILED })
+      yield call(reject, { error: 'VERIFY_LOGIN_FAILED' })
+      return
+    }
+    yield put({type: UPDATE_USER_DATA, payload: fetch.body})
+    localStorage.setItem('USER_DATA', JSON.stringify({...fetch.body, email: payload.email}))
+    addCookies('isAuth', 'true')
+
+    yield call(resolve, { state: 200 })
+    yield put({type: VERIFY_LOGIN_SUCCESS})
+
   } catch (error) {
-    yield put({type: CHANGE_STATE_APP, payload: { loading: false }})
+    yield call(reject, { error: 'ERROR_SERVIDOR' })
+    yield put({ type: VERIFY_LOGIN_FAILED })
   }
 }
 
