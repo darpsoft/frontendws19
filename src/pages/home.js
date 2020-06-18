@@ -74,7 +74,7 @@ const HomePage = ({ covidReducer, getStartCovid, favoritesReducer, updateFavorit
 
         <div className={classes.root}>
           <Grid container spacing={3}>
-            <Grid item xs={4} sm={12}>
+            <Grid item xs={12} sm={12} md={4} lg={4}>
               <Paper className={classes.paper}>
                 <IconConfirmados width={50} height={50} color="#000" />
                 <Typography variant="h5" component="h2">
@@ -87,7 +87,7 @@ const HomePage = ({ covidReducer, getStartCovid, favoritesReducer, updateFavorit
                 </Typography>
               </Paper>
             </Grid>
-            <Grid item xs={4} sm={12}>
+            <Grid item xs={12} sm={12} md={4} lg={4}>
               <Paper className={classes.paper}>
                 <IconCurados width={50} height={50} color="#000" />
                 <Typography variant="h5" component="h2">
@@ -100,7 +100,7 @@ const HomePage = ({ covidReducer, getStartCovid, favoritesReducer, updateFavorit
                 </Typography>
               </Paper>
             </Grid>
-            <Grid item xs={4} sm={12}>
+            <Grid item xs={12} sm={12} md={4} lg={4}>
               <Paper className={classes.paper}>
                 <IconMuertos width={50} height={50} color="#000" />
                 <Typography variant="h5" component="h2">
