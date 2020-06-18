@@ -12,7 +12,7 @@ const Component = React.memo(({element, favoritesReducer, addFavorites}) => {
   const favoriteState = arrFavorites.filter(e => e.CountryCode === element.CountryCode).length
 
   return(
-    <TableRow key={element.CountryCode}>
+    <TableRow>
       <TableCell component="th" scope="row">
         {element.Country}
       </TableCell>
@@ -27,7 +27,7 @@ const Component = React.memo(({element, favoritesReducer, addFavorites}) => {
 }, (p, n) => { 
   const oldDate = p.favoritesReducer.Countries.filter(e => e.CountryCode === p.element.CountryCode).length
   const newDate = n.favoritesReducer.Countries.filter(e => e.CountryCode === n.element.CountryCode).length
-  return oldDate === newDate
+  return oldDate === newDate && p.element.CountryCode === n.element.CountryCode
 })
 
 const mapStateToProps = state => {
