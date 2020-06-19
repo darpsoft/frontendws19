@@ -8,6 +8,9 @@ Rutas del Frontend
 * Inicio:   https://worldstats19.herokuapp.com/home 
 * Favoritos:   https://worldstats19.herokuapp.com/favorites  
 
+Se utilizó un API publica para obtener las estadisticas de Covid 19
+* https://api.covid19api.com
+
 Nota: Si desea realizar el Test de velocidad, les dejé 2 rutas más que serían lo mismo que el "Inicio, Favoritos". Estas rutas no requieren tener una sesión iniciada, de esta forma se puede hacer el Test sin ningún problema.
 * https://worldstats19.herokuapp.com/testHome
 * https://worldstats19.herokuapp.com/testFavorites   
