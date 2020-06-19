@@ -5,13 +5,11 @@ import fetchAPI from '../fetch'
 function* getCovid ({ payload }){
   try {
     yield put({type: CHANGE_STATE_APP, payload: { loading: true }})
-
     const fetch = yield call(fetchAPI, 'get', 'https://api.covid19api.com/summary')
     yield put({type: GET_SUCCESS_COVID, payload: { 
       ...fetch, 
       Countries: fetch.Countries.sort((a, b) => parseInt(b.TotalConfirmed) - parseInt(a.TotalConfirmed)) // Ordenar SORT
     }})
-
     yield put({type: CHANGE_STATE_APP, payload: { loading: false }})
   } catch (error) {
     yield put({type: CHANGE_STATE_APP, payload: { loading: false }})

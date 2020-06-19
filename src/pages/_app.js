@@ -17,9 +17,10 @@ class MyApp extends App {
   static async getInitialProps ({ ctx }) {
     const myCookies = cookies(ctx)
 
-    if(ctx.pathname !== '/testFavorite' || ctx.pathname !== '/testHome') return;
+    if(ctx.pathname === '/testFavorite' || ctx.pathname === '/testHome'){ return; }
 
     if(typeof myCookies.isAuth === 'undefined'){
+      if(ctx.pathname === '/') redirectTo('/login', { res: ctx.res, status: 301 });
       if(ctx.pathname !== '/login' && ctx.pathname !== '/register') redirectTo('/login', { res: ctx.res, status: 301 });
     }
 

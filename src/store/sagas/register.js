@@ -1,4 +1,5 @@
 import { put, call, takeLatest } from 'redux-saga/effects'
+import { addCookies } from '../../cookies'
 import { REGISTER_START, REGISTER_SUCCESS, REGISTER_FAILED } from '../actions'
 import fetchAPI from '../fetch'
 
@@ -12,6 +13,8 @@ function* listeningRegister ({ payload, resolve, reject }){
     }
     
     localStorage.setItem('USER_DATA', JSON.stringify(payload))
+    addCookies('isAuth', 'true')
+    
     yield call(resolve, { state: 200 })
     yield put({type: REGISTER_SUCCESS})
     

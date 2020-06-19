@@ -20,13 +20,13 @@ import { getDateTodayName, formatCurrency } from '../functions'
 import { connect } from 'react-redux'
 import * as actions from '../store/actions'
 
-const LoadingItem = () => {
+const LoadingItem = React.memo(() => {
   return(
     <>
     { [1,2,3,4,5].map((e, i) => <ElementLoading key={i} />) }
     </>
   )
-}
+}, () => { return true })
 
 const useStyles = makeStyles((theme) => ({
   table: {

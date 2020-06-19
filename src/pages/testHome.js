@@ -1,32 +1,30 @@
 import { makeStyles } from '@material-ui/core/styles'
-import Table from '@material-ui/core/Table'
-import TableBody from '@material-ui/core/TableBody'
-import TableCell from '@material-ui/core/TableCell'
-import TableContainer from '@material-ui/core/TableContainer'
-import TableHead from '@material-ui/core/TableHead'
-import TableRow from '@material-ui/core/TableRow'
 import Paper from '@material-ui/core/Paper'
 import Grid from '@material-ui/core/Grid'
 import Typography from '@material-ui/core/Typography'
-import ElementLoading from '../components/ElementLoading'
+import ElementLoadingTest from '../components/ElementLoadingTest'
 
-import { IconConfirmados, IconMuertos, IconCurados } from '../assets/svg'
+import { ListItem, ListItemText, Divider } from '@material-ui/core'
+
+import { FixedSizeList as List } from 'react-window'
+import AutoSizer from 'react-virtualized-auto-sizer'
 
 import Container from '../components/Container'
-import ElementTable from '../components/ElementTable'
+import ElementTableTest from '../components/ElementTableTest'
 
 import { getDateTodayName, formatCurrency } from '../functions'
 
 import { connect } from 'react-redux'
 import * as actions from '../store/actions'
 
-const LoadingItem = () => {
+
+const LoadingItem = React.memo(() => {
   return(
     <>
-    { [1,2,3,4,5].map((e, i) => <ElementLoading key={i} />) }
+    { [1,2,3,4,5,6,7,8,9,10].map((e, i) => <ElementLoadingTest key={i} />) }
     </>
   )
-}
+}, () => { return true })
 
 const useStyles = makeStyles((theme) => ({
   table: {
@@ -41,7 +39,10 @@ const useStyles = makeStyles((theme) => ({
   },
   paper: {
     padding: theme.spacing(2),
-    textAlign: 'center'
+    textAlign: 'center',
+    zIndex: 10,
+    marginBottom: -10
+
   },
   gridConfirmed: {
     color: theme.palette.text.secondary,
@@ -52,9 +53,23 @@ const useStyles = makeStyles((theme) => ({
   gridDeaths: {
     color: '#ff5722'
   },
+  rootDiv: {
+    width: '100%',
+    height: '100%',
+    overflowX: 'auto',
+    overflowY: 'hidden'
+  },
+  rootDivResponsive: {
+    width: '100%',
+    height: '40vh',
+    minWidth: 800,
+    minHeight: '50vh',
+    backgroundColor: theme.palette.background.paper,
+  }
 }))
 
-const HomePage = ({ covidReducer, getStartCovid, favoritesReducer, updateFavorites }) => {
+
+const HomePage = React.memo(({ covidReducer, getStartCovid, favoritesReducer, updateFavorites }) => {
   const classes = useStyles()
 
   React.useEffect(() => {
@@ -76,7 +91,6 @@ const HomePage = ({ covidReducer, getStartCovid, favoritesReducer, updateFavorit
           <Grid container spacing={3}>
             <Grid item xs={12} sm={12} md={4} lg={4}>
               <Paper className={classes.paper}>
-                <IconConfirmados width={50} height={50} color="#000" />
                 <Typography variant="h5" component="h2">
                   CONFIRMADOS
                 </Typography>
@@ -89,7 +103,6 @@ const HomePage = ({ covidReducer, getStartCovid, favoritesReducer, updateFavorit
             </Grid>
             <Grid item xs={12} sm={12} md={4} lg={4}>
               <Paper className={classes.paper}>
-                <IconCurados width={50} height={50} color="#000" />
                 <Typography variant="h5" component="h2">
                   RECUPERADOS
                 </Typography>
@@ -102,7 +115,6 @@ const HomePage = ({ covidReducer, getStartCovid, favoritesReducer, updateFavorit
             </Grid>
             <Grid item xs={12} sm={12} md={4} lg={4}>
               <Paper className={classes.paper}>
-                <IconMuertos width={50} height={50} color="#000" />
                 <Typography variant="h5" component="h2">
                   MUERTOS
                 </Typography>
@@ -115,28 +127,44 @@ const HomePage = ({ covidReducer, getStartCovid, favoritesReducer, updateFavorit
             </Grid>
           </Grid>
         </div>
-
-        <TableContainer component={Paper} className={classes.tableContainer}>
-          <Table className={classes.table} size="small">
-            <TableHead>
-              <TableRow>
-                <TableCell>Pais</TableCell>
-                <TableCell align="right">Confirmados (Hoy)</TableCell>
-                <TableCell align="right">Recuperados (Hoy)</TableCell>
-                <TableCell align="right">Muertos (Hoy)</TableCell>
-                <TableCell></TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              { covidReducer.Countries.length === 0 ? <LoadingItem /> : null }
-              { covidReducer.Countries.map((element, index) => <ElementTable key={index} element={element} />) }
-            </TableBody>
-          </Table>
-        </TableContainer>
+        
+        <div className={classes.rootDiv}>
+          <div className={classes.rootDivResponsive}>
+          <ListItem style={{height: 35}}>
+            <ListItemText style={{textAlign: "left", width: "35%"}}>
+              <Typography color="inherit" noWrap><b>{`Pais`}</b></Typography>
+            </ListItemText>
+            <ListItemText style={{textAlign: "right", width: "20%"}}>
+              <Typography color="inherit" noWrap><b>{`Confirmados (Hoy)`}</b></Typography>
+            </ListItemText>
+            <ListItemText style={{textAlign: "right", width: "20%"}}>
+              <Typography color="inherit" noWrap><b>{`Recuperados (Hoy)`}</b></Typography>
+            </ListItemText>
+            <ListItemText style={{textAlign: "right", width: "20%"}}>
+              <Typography color="inherit" noWrap><b>{`Muertos (Hoy)`}</b></Typography>
+            </ListItemText>
+            <ListItemText style={{textAlign: "right", width: "5%"}} />
+            <div style={{width: 20}}></div>
+          </ListItem>
+          <Divider />
+          { covidReducer.Countries.length === 0 ? <LoadingItem /> : null }
+          <AutoSizer>
+            {
+              ({ height, width }) => {
+                return(
+                  <List height={height - 36} width={width} itemSize={52} itemCount={covidReducer.Countries.length}>
+                    { ({ index, style }) => <ElementTableTest key={index} element={covidReducer.Countries[index]} style={style} /> }
+                  </List>
+                )
+              }
+            }
+          </AutoSizer>
+          </div>
+        </div>
       </Container>
     </React.Fragment>
   )
-}
+}, (p, n) => { return p.covidReducer.Date === n.covidReducer.Date })
 
 const mapStateToProps = state => {
   return { covidReducer: state.covidReducer, favoritesReducer: state.favoritesReducer }

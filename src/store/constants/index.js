@@ -1,6 +1,6 @@
 const covidConstanst = {
   Countries: [],
-  Date: new Date(),
+  Date: "",
   Global: {}
 }
 
