@@ -9,5 +9,5 @@ Rutas del Frontend
 * Favoritos:   https://worldstats19.herokuapp.com/favorites  
 
 Nota: Si desea realizar el Test de velocidad, les dejé 2 rutas más que serían lo mismo que el "Inicio, Favoritos". Estas rutas no requieren tener una sesión iniciada, de esta forma se puede hacer el Test sin ningún problema.
-https://worldstats19.herokuapp.com/testHome
-https://worldstats19.herokuapp.com/testFavorites   
+* https://worldstats19.herokuapp.com/testHome
+* https://worldstats19.herokuapp.com/testFavorites   
