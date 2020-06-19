@@ -1,4 +1,4 @@
-# frontendws19
+# frontendws19 - Worldstats 19
 Sistema web NextJS + React + Redux + Redux-Saga
 
 Url Heroku Frontend:  https://worldstats19.herokuapp.com
