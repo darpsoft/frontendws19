@@ -31,10 +31,6 @@
 * **[99-98] PUNTOS COMPUTER**
 * **[78] PUNTOS MOBILE**
 
-
-
-
-
 ## PRUEBA #2 
 ### COMPONENTES HABILITADOS:
 * `<Sqeleton />`
@@ -142,6 +138,9 @@ Un ejemplo de esto es la librería **`react-bootstrap-table`** este no se actual
 
 ### Librerías incompatibles
 Debido a que la tecnología que se está utilizando es nueva, hay algunas librerías que dejarán de ser compatibles, esto se debe a que estamos utilizando SSR. actualizando las librerías necesarias se puede obtener un performance y un rendimiento increíble. 
+
+### Bootstrap Custom
+Las aplicaciones basadas en Bootstrap son bastante pesadas y pueden ser lentas si no dedica tiempo a deshacerse de componentes innecesarios y scripts JS, por esto recomendamos analizar y deshacerse de aquellas que no se están utilizando
 
 ### Migración de Bootstrap a Material UI ó Mdbootstrap
 En todos los ejemplos anteriores siempre quisimos dar a entender que la librería bootstrap no es la mejor opcion a la hora de trabajar con Next y React en 2020. Esto se debe a que la librería Bootstrap está diseñada para trabajar en todas las situaciones, esto quiere decir que no está especializada ó diseñada para React (En este caso) o otras tecnología, tiene incorporados muchos Script y estilos que puede que no se usen. Con Material UI es otra historia, ellos están especializados en muchas áreas y entre ella está React. Materíal UI posee componentes ya diseñados exclusivamente para el uso en React, gracias a esto se obtiene un mejor performance y rendimiento. 
