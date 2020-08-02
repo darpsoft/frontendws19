@@ -6,6 +6,7 @@
 * El performance promedio de la página **/home** es de 
 	* **[75] PUNTOS COMPUTER** 
 	* **[56] PUNTOS MOBIL** 
+* La suma de todas las pruebas no dará como resultado el performance antes mencionado, recuerden que el performance varía según la información que se muestra al usuario, puede que algunos ejemplos den mejor performance por el simple hecho de renderizar la información de otro forma.
 
 ## PRUEBA #1 
 ### COMPONENTES HABILITADOS:
@@ -70,9 +71,10 @@
 
 ### Preguntas y respuestas
 * **¿Porqué baja tanto en Mobile?**
-	* "". 
+	* Esto se debe al que wrapper es dinámico, está en costante cambio según la página que visitemos, por ejemplo: Cuando visitamos blog el se deshabilita por completo exceptuando algunos componentes, unos de estos componente es una CINTA que aparece solo en mobile, para ser mas exacto es el componente `<SmartBanner/>`, a la hora de renderizar se crea un rectangulo en la parte superior de la pantalla, este afecta en el performance. 
 * **¿Como se puede solucionar?**
-	* "". 
+	* Mi recomendación es dividir el Wrapper en 2, uno para Blog y otro para las demás páginas, ademas se puede mejorar la forma de presentar la información en el header.
+	* Se debería de cambiar algunas librerías que afectan el performance o cambiar la forma de mostrar dicha información.  
 
 ## PRUEBA #4
 ### COMPONENTES HABILITADOS:
@@ -89,10 +91,8 @@
 * **[58] PUNTOS MOBILE** 
 
 ### Preguntas y respuestas
-* **¿Porqué baja tanto en Mobile?**
-	* "". 
-* **¿Como se puede solucionar?**
-	* "". 
+* **¿Se puede mejorar el performance en móbil?**
+	* En realidad este componente está bien optimizado, el como está estructurado es muy bueno, pero como se puede mejorar? En este caso el componente trabaja con muchos iconos y librerías, estas librerías y iconos en mobile bajan un poco el performance. Se tendría que hacer un estudio de como presentar la información correctamente en "**Mobile**" ya que en "**Computer**" no hay gran impacto.
 
 ## PRUEBA #5
 ### COMPONENTES HABILITADOS:
@@ -110,9 +110,9 @@
 
 ### Preguntas y respuestas
 * **¿Porqué baja tanto en Mobile?**
-	* "". 
+	* Esto se debe a como se muestra la información, en el componente existe básicamente un ARRAY que contiene toda la información (Imagenes, texto, hipervínculos) que este se despliega para poder mostrar la información, en mobile existen varias cosas a evaluar y en ellas está a como se presenta la información en mobile, debido a que es mucha puede que cree alguna ineficiencia.
 * **¿Como se puede solucionar?**
-	* "". 
+	* Se puede mejorar mostrando información según el usuario baje, se puede diseñar un algoritmo que detecte el scroll y así ir mostrando información. También abría que evaluar los estilos que se están utilizando al presentar la información.
 
 ## PRUEBA #6
 ### COMPONENTES HABILITADOS:
@@ -130,9 +130,23 @@
 
 ### Preguntas y respuestas
 * **¿Porqué baja tanto el Performance?**
-	* "". 
+	* Esto se debe a que este componente es complejo a nivel interno, trabaja con muchos algoritmos y por ende tiene un mayor coste de consumo. Mediante pasa el tiempo de renderizado estos se ejecutan y cambia la interfaz dependiendo de las acciones que se ejecutan. Además que está conectado a otros sub componentes para su funcionamiento.
 * **¿Que se puede hacer para mejorar?**
-	* "". 
+	* En este caso sería algo complejo, ya que se debe hacer un estudio sobre todo lo que se está realizando dentro de el, la forma de mostrar la información ya está bien trabajada, esto quiere decir que sería mejorar es en como se presentaría la información al usuario.
+
+# Conclusiones
+Según estudios realizados, se llegó a la conclusión de que el performance se ve afectado mas que todo por librerías desactualizadas. El sistema está bien estructurado y las mayorías de los componentes están bien optimizados y estructurados. 
+
+### Librerías desactualizdas. 
+Un ejemplo de esto es la librería **`react-bootstrap-table`** este no se actualiza desde el año 2017. Existen otras librerías que se pueden reemplazar y así obtener mejor performance.
+
+### Librerías incompatibles
+Debido a que la tecnología que se está utilizando es nueva, hay algunas librerías que dejarán de ser compatibles, esto se debe a que estamos utilizando SSR. actualizando las librerías necesarias se puede obtener un performance y un rendimiento increíble. 
+
+### Migración de Bootstrap a Material UI ó Mdbootstrap
+En todos los ejemplos anteriores siempre quisimos dar a entender que la librería bootstrap no es la mejor opcion a la hora de trabajar con Next y React en 2020. Esto se debe a que la librería Bootstrap está diseñada para trabajar en todas las situaciones, esto quiere decir que no está especializada ó diseñada para React (En este caso) o otras tecnología, tiene incorporados muchos Script y estilos que puede que no se usen. Con Material UI es otra historia, ellos están especializados en muchas áreas y entre ella está React. Materíal UI posee componentes ya diseñados exclusivamente para el uso en React, gracias a esto se obtiene un mejor performance y rendimiento. 
+
+**Nota:** Nosotros analizamos cada dependencia instalada y por esto llegamos a esta conclusión, en algunos casos nos vimos obligado a cambiar de librería debido a la incompatibilidad con NEXT y REACT.
   
 
 # IMFORME 1 ----------------------
