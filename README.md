@@ -6,6 +6,9 @@
 
 # ANALISIS JAVASCRIPT 
 
+A continuación, se explicará el porqué es necesario los archivos JS **chunks generados predeterminadamente por NEXTJS**
+![](https://conceptodigital.net/asdasd/performance/ahorro_estimado.png)
+
 A continuación se mostrará el contenido de el js [http://qrcode-nextjs.herokuapp.com/_next/static/chunks/769650a343d2ea102d2bc328cb1e3586d29b3d4e.4329d91e89f86ad9cb48.js], aquí se podrá visualizar las librerías en funcionamiento de este script.
 ![](https://conceptodigital.net/asdasd/performance/chunks_769650.png)
 Se realizó un seguimiento exhaustivo dando como conclusión que todas las librerías llamadas en ellas son necesarias para el funcionamiento del sistema, en ella podemos ver la carga que ejerce cada librería sobre el script. Como un ejemplo en este caso es el **Toastr**, el siempre deberá estar activo para que cuando el sistema lo necesite, al igual que los **reducer** y los **sagas**, estos serán llamados cuando sea necesario. Además de otras librerías que son necesarias como el immutable. 
@@ -38,9 +41,7 @@ A continuación se mostrará el performance sin estilos en la aplicación, cabe 
 
 **Performance Mobile**
 ![](https://conceptodigital.net/asdasd/performance/performance_mobile_sin_estilos.png)
-**Nota:** El performance en este caso es de 92 puntos, esto se debe a que en movil algunas funcionalidades del sistema se deshabilitan por el modo "Responsive", gracias a esto [Lighthouse](https://developers.google.com/web/tools/lighthouse/). muestra el siguiente mensaje:
-
-![](https://conceptodigital.net/asdasd/performance/ahorro_estimado.png)
+**Nota:** El performance en este caso es de 92 puntos, esto se debe a que en movil algunas funcionalidades del sistema se deshabilitan por el modo "Responsive".
 
 
 ## Pruebas con estilos [Sin bootstrap]
