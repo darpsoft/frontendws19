@@ -11,7 +11,18 @@ A continuación se mostrará el contenido de el js [http://qrcode-nextjs.herokua
 ![](https://conceptodigital.net/asdasd/performance/chunks_769650.png)
 Se realizó un seguimiento exhaustivo dando como conclusión que todas las librerías llamadas en ellas son necesarias para el funcionamiento del sistema, en ella podemos ver la carga que ejerce cada librería sobre el script. Como un ejemplo en este caso es el **Toastr**, el siempre deberá estar activo para que cuando el sistema lo necesite, al igual que los **reducer** y los **sagas**, estos serán llamados cuando sea necesario. Además de otras librerías que son necesarias como el immutable. 
 
-###  SIN ESTILOS
+
+# Hacking Next.js for better PageSpeed scores 
+Implementación de componentes custom para la mejora del performance.
+[https://medium.com/medwing-engineering-product-design/hacking-next-js-for-better-pagespeed-scores-6c651d19f218] en este articulo se puede ver una forma de mejorar el performance radicalmente con algunas "Tecnicas", cabe destacar que la versión de next es 9.2.1 
+
+Se intentó implementar estas tecnicas en el proyecto actual y no funcionó, esto se debe a que dichas tecnicas dejaron de ser funcionales cuando se implemento SSG en la versión 9.3.0 de next, véase aquí [https://nextjs.org/blog/next-9-3].
+
+Las tecnicas antes mencionadas en resumen consiste en la administración de script generados en _document, gracias a la nueva actualización, aquellas **page** generadas por SSG no generan algunas propiedades fundamentales para la **Fragmentación / división de código**.
+
+
+# ANALISIS CSS
+### TESTING SIN ESTILOS
 URL PRUEBA: [https://qrcode-nextjs.herokuapp.com/testing/t1_wrapper]
 Detalles del código, todos los estilos deshabilitado
 ![](https://conceptodigital.net/asdasd/performance/editor_nada_css.png)
@@ -27,14 +38,6 @@ A continuación se mostrará el performance sin estilos en la aplicación, cabe 
 
 ![](https://conceptodigital.net/asdasd/performance/ahorro_estimado.png)
 
-
-# Hacking Next.js for better PageSpeed scores 
-Implementación de componentes custom para la mejora del performance.
-[https://medium.com/medwing-engineering-product-design/hacking-next-js-for-better-pagespeed-scores-6c651d19f218] en este articulo se puede ver una forma de mejorar el performance radicalmente con algunas "Tecnicas", cabe destacar que la versión de next es 9.2.1 
-
-Se intentó implementar estas tecnicas en el proyecto actual y no funcionó, esto se debe a que dichas tecnicas dejaron de ser funcionales cuando se implemento SSG en la versión 9.3.0 de next, véase aquí [https://nextjs.org/blog/next-9-3].
-
-Las tecnicas antes mencionadas en resumen consiste en la administración de script generados en _document, gracias a la nueva actualización, aquellas **page** generadas por SSG no generan algunas propiedades fundamentales para la **Fragmentación / división de código**.
 
 **Conclusión:** NextJS es una Framework que está en constante evolución, ahora mas que nunca que tiene tanto apoyo como por ejemplo de Google, su equipo se dedica a mejorar en todos los aspectos las debilidades. Actualmente se está usando NextJS 9.5 donde posee mejoras importantes, esta se ven reflejadas en el performance y por ende no hay necesidad de aplicar algunas técnicas.  Vease [https://nextjs.org/blog/next-9-5].
 
