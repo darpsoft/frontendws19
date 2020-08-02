@@ -1,3 +1,142 @@
+# ESTUDIO DEL LA PÁGINA /HOME
+## Cosas a tener en cuenta
+* Las pruebas se estarán haciendo en el servidor de **Heroku**
+* Todas las pruebas se hicieron con todas las librerías instaladas del sistema
+* Todas las pruebas poseen todos los estilos habilitados, tanto de las librerías como de los componentes, (**Se está usando el Bootstrap custom**)
+* El performance promedio de la página **/home** es de 
+	* **[75] PUNTOS COMPUTER** 
+	* **[56] PUNTOS MOBIL** 
+
+## PRUEBA #1 
+### COMPONENTES HABILITADOS:
+* ``
+
+### COMPONENTES DESHABILITADOS: 
+* `<Sqeleton />`
+* `<WrapperApp />`
+* `<VisualCodeMainInfo />`
+* `<LogoCode />`
+* `<Information />`
+
+### RESULTADO PRUEBA PERFORMANCE:
+* **[95] PUNTOS COMPUTER** 
+* **[78] PUNTOS MOBILE** 
+
+### Preguntas y respuestas
+* **¿Porqué tiene esa puntuación si no posee ningún componente?**
+	* Esto se debe a que el Lighthouse evalúa según el contenido renderizado, en este caso solo se está mostrando en contenido de `/home`, recuerden que estamos **deshabilitando** componentes, aún queda el contenedor que envuelve dichos componentes, este contenedor posee letras, y estilos  que envuelven a los **componentes**, ellos aún se ven reflejados a la hora de cargar. 
+
+### IMPORTANTE: SE HIZO PRUEBAS SIN NINGÚN CONTENIDO Y DIO EL SIGUIENTE RESULTADO
+* **[99-98] PUNTOS COMPUTER**
+* **[78] PUNTOS MOBILE**
+
+
+
+
+
+## PRUEBA #2 
+### COMPONENTES HABILITADOS:
+* `<Sqeleton />`
+
+### COMPONENTES DESHABILITADOS: 
+* `<WrapperApp />`
+* `<VisualCodeMainInfo />`
+* `<LogoCode />`
+* `<Information />`
+
+### RESULTADO PRUEBA PERFORMANCE:
+* **[93] PUNTOS COMPUTER** 
+* **[65] PUNTOS MOBILE** 
+
+### Preguntas y respuestas
+* **¿Porqué tiene esa puntuación si no posee ningún componente?**
+	* Esto se debe a que el contenedor se está llamando desde `/home`, este contenedor no posee SSR habilitado (**Se compila del lado del cliente**) y se muestra un sqeleton como loading para luego renderizar el contenido. Este sqeleton disminuye el performance (**Solo si no hay contenido que mostrar**), en este caso quitamos todo el contenido del Sqeleton y por ello sucede este "efecto". 
+
+**Nota:** Este disminución del "Performance" solo es de Lighthouse. Esto se debe a que ellos analizan ciertas condiciones para de la vista y luego dan un resultado. En conclusión; no afecta al performance en realidad. Vease [[https://web.dev/lighthouse-largest-contentful-paint/?utm_source=lighthouse&utm_medium=unknown](https://web.dev/lighthouse-largest-contentful-paint/?utm_source=lighthouse&utm_medium=unknown)]
+
+## PRUEBA #3 
+### COMPONENTES HABILITADOS:
+* `<Sqeleton />`
+* `<WrapperApp />`
+
+### COMPONENTES DESHABILITADOS: 
+* `<VisualCodeMainInfo />`
+* `<LogoCode />`
+* `<Information />`
+
+### RESULTADO PRUEBA PERFORMANCE:
+* **[93] PUNTOS COMPUTER** 
+* **[56] PUNTOS MOBILE** 
+
+### Preguntas y respuestas
+* **¿Porqué baja tanto en Mobile?**
+	* "". 
+* **¿Como se puede solucionar?**
+	* "". 
+
+## PRUEBA #4
+### COMPONENTES HABILITADOS:
+* `<Sqeleton />`
+* `<WrapperApp />`
+* `<VisualCodeMainInfo />`
+
+### COMPONENTES DESHABILITADOS: 
+* `<LogoCode />`
+* `<Information />`
+
+### RESULTADO PRUEBA PERFORMANCE:
+* **[90] PUNTOS COMPUTER** 
+* **[58] PUNTOS MOBILE** 
+
+### Preguntas y respuestas
+* **¿Porqué baja tanto en Mobile?**
+	* "". 
+* **¿Como se puede solucionar?**
+	* "". 
+
+## PRUEBA #5
+### COMPONENTES HABILITADOS:
+* `<Sqeleton />`
+* `<WrapperApp />`
+* `<Information />`
+
+### COMPONENTES DESHABILITADOS: 
+* `<VisualCodeMainInfo />`
+* `<LogoCode />`
+
+### RESULTADO PRUEBA PERFORMANCE:
+* **[83] PUNTOS COMPUTER** 
+* **[50] PUNTOS MOBILE** 
+
+### Preguntas y respuestas
+* **¿Porqué baja tanto en Mobile?**
+	* "". 
+* **¿Como se puede solucionar?**
+	* "". 
+
+## PRUEBA #6
+### COMPONENTES HABILITADOS:
+* `<Sqeleton />`
+* `<WrapperApp />`
+* `<LogoCode />`
+
+### COMPONENTES DESHABILITADOS: 
+* `<VisualCodeMainInfo />`
+* `<Information />`
+
+### RESULTADO PRUEBA PERFORMANCE:
+* **[77] PUNTOS COMPUTER** 
+* **[51] PUNTOS MOBILE** 
+
+### Preguntas y respuestas
+* **¿Porqué baja tanto el Performance?**
+	* "". 
+* **¿Que se puede hacer para mejorar?**
+	* "". 
+  
+
+# IMFORME 1 ----------------------
+
 # WHAT AFFECTS PERFORMANCE ON MOBILE?
 
 * The performance obtained in different situations will be shown below, it should be noted that the tests were carried out through the website
