@@ -4,8 +4,12 @@
 * Todas las pruebas se hicieron con todas las librerías instaladas del sistema
 * Todas las pruebas poseen todos los estilos habilitados, tanto de las librerías como de los componentes, (**Se está usando el Bootstrap custom**)
 * El performance promedio de la página **/home** es de 
-	* **[75] PUNTOS COMPUTER** 
-	* **[56] PUNTOS MOBIL** 
+	* Antes
+		* **[57] PUNTOS COMPUTER**
+		* **[16] PUNTOS MOBIL**
+	* Ahora
+		* **[75] PUNTOS COMPUTER**
+		* **[56] PUNTOS MOBIL**
 * La suma de todas las pruebas no dará como resultado el performance antes mencionado, recuerden que el performance varía según la información que se muestra al usuario, puede que algunos ejemplos den mejor performance por el simple hecho de renderizar la información de otro forma.
 
 ## PRUEBA #1 
