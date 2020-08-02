@@ -79,7 +79,7 @@ Below is the impact that **bootstrap custom** has on performance, this means tha
 
 **Note:** It should be noted that each style was disabled after **TESTING ON THE SYSTEM**. If any disabled style is being used on any page, feel free to enable it.
 ![](https://conceptodigital.net/asdasd/performance/editor_todo_css_bootstrap_mod.png)
-**Note:** you can see that the import is from [** public/static/assets/scss/main.scss **], it should be noted that the **bootstrap.min.css** (Default) of [**_app.js**] is disabled.
+**Note:** you can see that the import is from [**public/static/assets/scss/main.scss **], it should be noted that the **bootstrap.min.css** (Default) of [**app.js**] is disabled.
 
 **Performance Computer**
 ![](https://conceptodigital.net/asdasd/performance/performance_computer_con_bootstrap.png)
