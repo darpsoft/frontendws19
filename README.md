@@ -2,7 +2,7 @@
 
 * A continuación se mostrará el performance obtenido en distintas situaciones, cabe destacar que las pruebas se hicieron a través de la página web [https://developers.google.com/speed/pagespeed/insights/]. 
 * Todas las pruebas se hicieron en el servidor de Heroku
-* La espacio donde se hicieron las pruebas es [https://qrcode-nextjs.herokuapp.com/]
+* El espacio donde se hicieron las pruebas es [https://qrcode-nextjs.herokuapp.com/]
 
 ###  SIN ESTILOS
 URL PRUEBA: [https://www.free-qr-code-generator.com/testing/t1_wrapper]
