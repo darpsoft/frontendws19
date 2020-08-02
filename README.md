@@ -57,7 +57,8 @@ Aquí podemos ver que la librería bootstrap está **deshabilitada** por complet
 **Performance Mobile**
 ![](https://conceptodigital.net/asdasd/performance/performance_mobile_sin_bootstrap.png)
 **Nota:** Se puede notar que el performance en móvil se ve afectado por el uso de todo los estilos, excepto **Bootstrap**. La disminución es de **7 PUNTOS**. 
-Los estilos glabales afectan muy poco al performance (Estilos de Librerías)
+
+**Conclusión:** Los estilos de los componentes y de las librerías afectan muy poco al performance (Estilos de Librerías).
 
 ## Pruebas con estilos [Con bootstrap Default]
 A continuación se mostrará el impacto que tiene bootstrap en el performance, en este caso **agregaremos a Bootstrap predeterminado**, un vistazo al código antes de mostrar los resultados del performance.
