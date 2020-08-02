@@ -4,7 +4,7 @@
 * Todas las pruebas se hicieron en el servidor de Heroku
 * El espacio donde se hicieron las pruebas es [https://qrcode-nextjs.herokuapp.com/]
 
-## LIBRERÍA JAVASCRIPT 
+## ANALISIS JAVASCRIPT 
 **Todas las pruebas realizadas en este readme poseen todas las librerías instaladas. (TODOS LOS ARCHIVOS JS)**
 
 A continuación se mostrará el contenido de el js [http://qrcode-nextjs.herokuapp.com/_next/static/chunks/769650a343d2ea102d2bc328cb1e3586d29b3d4e.4329d91e89f86ad9cb48.js], aquí se podrá visualizar las librerías en funcionamiento de este script.
@@ -19,6 +19,8 @@ Implementación de componentes custom para la mejora del performance.
 Se intentó implementar estas tecnicas en el proyecto actual y no funcionó, esto se debe a que dichas tecnicas dejaron de ser funcionales cuando se implemento SSG en la versión 9.3.0 de next, véase aquí [https://nextjs.org/blog/next-9-3].
 
 Las tecnicas antes mencionadas en resumen consiste en la administración de script generados en _document, gracias a la nueva actualización, aquellas **page** generadas por SSG no generan algunas propiedades fundamentales para la **Fragmentación / división de código**.
+
+**Conclusión:** NextJS es una Framework que está en constante evolución, ahora mas que nunca que tiene tanto apoyo como por ejemplo de Google, su equipo se dedica a mejorar en todos los aspectos las debilidades. Actualmente se está usando NextJS 9.5 donde posee mejoras importantes, esta se ven reflejadas en el performance y por ende no hay necesidad de aplicar algunas técnicas.  Vease [https://nextjs.org/blog/next-9-5].
 
 
 # ANALISIS CSS
@@ -38,8 +40,6 @@ A continuación se mostrará el performance sin estilos en la aplicación, cabe 
 
 ![](https://conceptodigital.net/asdasd/performance/ahorro_estimado.png)
 
-
-**Conclusión:** NextJS es una Framework que está en constante evolución, ahora mas que nunca que tiene tanto apoyo como por ejemplo de Google, su equipo se dedica a mejorar en todos los aspectos las debilidades. Actualmente se está usando NextJS 9.5 donde posee mejoras importantes, esta se ven reflejadas en el performance y por ende no hay necesidad de aplicar algunas técnicas.  Vease [https://nextjs.org/blog/next-9-5].
 
 # Pruebas con estilos [Sin bootstrap]
 A continuación se mostrará el impacto que tiene algunos estilos en el performance, en este caso **agregaremos todos los estilos de la aplicación** excepto [**bootstrap**], un vistazo al código antes de mostrar los resultados del performance
