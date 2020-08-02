@@ -9,7 +9,7 @@
 A continuación, se explicará el porqué es necesario los archivos JS **chunks generados predeterminadamente por NEXTJS**
 ![](https://conceptodigital.net/asdasd/performance/ahorro_estimado.png)
 
-En la imagen que se mostró, podemos visualizar que el archivo [http://qrcode-nextjs.herokuapp.com/_next/static/chunks/769650a343d2ea102d2bc328cb1e3586d29b3d4e.4329d91e89f86ad9cb48.js], se está utilizando en un 50%. 
+En la imagen que se mostró, podemos visualizar que el archivo [… Chunks / 769650a… .969962c… .js](http://qrcode-nextjs.herokuapp.com/_next/static/chunks/769650a343d2ea102d2bc328cb1e3586d29b3d4e.4329d91e89f86ad9cb48.js) de 108.4 KB, se está utilizando en un 50%. 
 
 Aquí se podrá visualizar las librerías en funcionamiento de este script.
 ![](https://conceptodigital.net/asdasd/performance/chunks_769650.png)
