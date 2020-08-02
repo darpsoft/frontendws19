@@ -29,17 +29,17 @@ Las tecnicas antes mencionadas en resumen consiste en la administración de scri
 
 # ANALISIS CSS
 
-### Todas las pruebas realizadas en este readme poseen todas las librerías instaladas. (TODOS LOS ARCHIVOS JS)
+### Todas las pruebas realizadas en adelante en este readme poseen todas las librerías instaladas. (TODOS LOS ARCHIVOS JS)
 
 ## TESTING SIN ESTILOS
 URL PRUEBA: [https://qrcode-nextjs.herokuapp.com/testing/t1_wrapper]
 Detalles del código, todos los estilos deshabilitado
 ![](https://conceptodigital.net/asdasd/performance/editor_nada_css.png)
-A continuación se mostrará el performance sin estilos en la aplicación, cabe destacar que la aplicación posee todas las librerías instaladas del proyecto.
+A continuación se mostrará el performance sin estilos de la aplicación.
 
 **Performance computer**
 ![](https://conceptodigital.net/asdasd/performance/performance_computer_sin_estilos.png)
-**Nota:** En estas imagenes se pueden visualizar que el performance en computer es de 100 - 99. Esto quiere decir que la aplicación no posee ninguna carga para el performance.
+**Nota:** En estas imagenes se pueden visualizar que el performance en computer es de 100 - 99. Esto quiere decir que los archivos js no afectan para nada en el performance.
 
 **Performance Mobile**
 ![](https://conceptodigital.net/asdasd/performance/performance_mobile_sin_estilos.png)
