@@ -4,7 +4,8 @@
 * Todas las pruebas se hicieron en el servidor de Heroku
 * El espacio donde se hicieron las pruebas es [https://qrcode-nextjs.herokuapp.com/]
 
-## **IMPORTANTE!! Todas las pruebas realizadas en este readme poseen todas las librerías instaladas. (TODOS LOS ARCHIVOS JS)
+## IMPORTANTE!! 
+**Todas las pruebas realizadas en este readme poseen todas las librerías instaladas. (TODOS LOS ARCHIVOS JS)**
 
 ###  SIN ESTILOS
 URL PRUEBA: [https://qrcode-nextjs.herokuapp.com/testing/t1_wrapper]
