@@ -43,7 +43,7 @@ A continuación se mostrará el performance sin estilos en la aplicación, cabe 
 ![](https://conceptodigital.net/asdasd/performance/ahorro_estimado.png)
 
 
-# Pruebas con estilos [Sin bootstrap]
+## Pruebas con estilos [Sin bootstrap]
 A continuación se mostrará el impacto que tiene algunos estilos en el performance, en este caso **agregaremos todos los estilos de la aplicación** excepto [**bootstrap**], un vistazo al código antes de mostrar los resultados del performance
 ![](https://conceptodigital.net/asdasd/performance/editor_todo_css_sin_bootstrap.png)
 Aquí podemos ver que la librería bootstrap está **deshabilitada** por completo **(Solo CSS)**
