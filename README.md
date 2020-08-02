@@ -3,9 +3,9 @@
 * A continuación se mostrará el performance obtenido en distintas situaciones, cabe destacar que las pruebas se hicieron a través de la página web [https://developers.google.com/speed/pagespeed/insights/]. 
 * Todas las pruebas se hicieron en el servidor de Heroku
 * El espacio donde se hicieron las pruebas es [https://qrcode-nextjs.herokuapp.com/]
+**Todas las pruebas realizadas en este readme poseen todas las librerías instaladas. (TODOS LOS ARCHIVOS JS)**
 
 ## ANALISIS JAVASCRIPT 
-**Todas las pruebas realizadas en este readme poseen todas las librerías instaladas. (TODOS LOS ARCHIVOS JS)**
 
 A continuación se mostrará el contenido de el js [http://qrcode-nextjs.herokuapp.com/_next/static/chunks/769650a343d2ea102d2bc328cb1e3586d29b3d4e.4329d91e89f86ad9cb48.js], aquí se podrá visualizar las librerías en funcionamiento de este script.
 ![](https://conceptodigital.net/asdasd/performance/chunks_769650.png)
