@@ -7,21 +7,20 @@
 ###  SIN ESTILOS
 URL PRUEBA: [https://www.free-qr-code-generator.com/testing/t1_wrapper]
 Detalles del código, todos los estilos deshabilitado
-![enter image description here](https://lh3.googleusercontent.com/H2cZYfi8XWKBy--cKNI7YeXoZ12oaGGaox9IHA1u5cdDu2CzyTI3feXXp0ermlN76LimheuzoNI)
+![](https://lh3.googleusercontent.com/H2cZYfi8XWKBy--cKNI7YeXoZ12oaGGaox9IHA1u5cdDu2CzyTI3feXXp0ermlN76LimheuzoNI)
 A continuación se mostrará el performance sin estilos en la aplicación, cabe destacar que la aplicación posee todas las librerías instaladas del proyecto.
 
 **Performance computer**
-![](https://lh3.googleusercontent.com/XYBCAdUROnoPEnEUeyJy8LD-4IRo8r6o7ur6zXcvLig0RQwaAxspnVYFFPUZUSQbkLRPW1Mi0tI "Performance Computer")
+![](https://lh3.googleusercontent.com/XYBCAdUROnoPEnEUeyJy8LD-4IRo8r6o7ur6zXcvLig0RQwaAxspnVYFFPUZUSQbkLRPW1Mi0tI)
 **Nota:** En estas imagenes se pueden visualizar que el performance en computer es de 100 - 99. Esto quiere decir que la aplicación no posee ninguna carga para el performance.
 
 **Performance Mobile**
-![
-](https://lh3.googleusercontent.com/bEeLtJHbxsVFBJFmaLGGKO4_Y-60295j27RYVxiGoFEnFyzosIkRj7FLio7ll60T-xCZvLxLpSg "Performance mobile")
+![](https://lh3.googleusercontent.com/bEeLtJHbxsVFBJFmaLGGKO4_Y-60295j27RYVxiGoFEnFyzosIkRj7FLio7ll60T-xCZvLxLpSg)
 **Nota:** El performance en este caso es de 92 puntos, esto se debe a que en movil algunas funcionalidades del sistema se deshabilitan por el modo "Responsive", gracias a esto [Lighthouse](https://developers.google.com/web/tools/lighthouse/). muestra el siguiente mensaje:
 
-![enter image description here](https://lh3.googleusercontent.com/saYGAn7FPMjt864lr4Pt9bNJPV04aXPLpN670Ly3-M1x4jwNICKtNa291d-D7vAYMQnayLJgaF8)
+![](https://lh3.googleusercontent.com/saYGAn7FPMjt864lr4Pt9bNJPV04aXPLpN670Ly3-M1x4jwNICKtNa291d-D7vAYMQnayLJgaF8)
 A continuación se mostrará el contenido de el js […chunks/769650a….4329d91….js](http://qrcode-nextjs.herokuapp.com/_next/static/chunks/769650a343d2ea102d2bc328cb1e3586d29b3d4e.4329d91e89f86ad9cb48.js), aquí se podrá visualizar las librerías en funcionamiento de este script.
-![enter image description here](https://lh3.googleusercontent.com/P5R2216_mRy0AQa1twwkcEZtMSOmC_r-UE4SomXZWKB0EMnruw8VdpKvlkjf7EskAfZucBCARME)
+!](https://lh3.googleusercontent.com/P5R2216_mRy0AQa1twwkcEZtMSOmC_r-UE4SomXZWKB0EMnruw8VdpKvlkjf7EskAfZucBCARME)
 Se realizó un seguimiento exhaustivo dando como conclusión que todas las librerías llamadas en ellas son necesarias para el funcionamiento del sistema, en ella podemos ver la carga que ejerce cada librería sobre el script. Como un ejemplo en este caso es el **Toastr**, el siempre deberá estar activo para que cuando el sistema lo necesite, al igual que los **reducer** y los **sagas**, estos serán llamados cuando sea necesario. Además de otras librerías que son necesarias como el immutable. 
 
 # Hacking Next.js for better PageSpeed scores 
@@ -36,40 +35,40 @@ Las tecnicas antes mencionadas en resumen consiste en la administración de scri
 
 # Pruebas con estilos [Sin bootstrap]
 A continuación se mostrará el impacto que tiene algunos estilos en el performance, en este caso **agregaremos todos los estilos de la aplicación** excepto [**bootstrap**], un vistazo al código antes de mostrar los resultados del performance
-![enter image description here](https://lh3.googleusercontent.com/VUibtdf1eo0ZlLpl2YBLZyNlo_ARGjUWw5TOSrAPxvc-ouvIhU1BG82QvCZa0S-HlDUrjAGqnq8)
+![](https://lh3.googleusercontent.com/VUibtdf1eo0ZlLpl2YBLZyNlo_ARGjUWw5TOSrAPxvc-ouvIhU1BG82QvCZa0S-HlDUrjAGqnq8)
 Aquí podemos ver que la librería bootstrap está **deshabilitada** por completo **(Solo CSS)**
 
 **Performance Computer**
-![enter image description here](https://lh3.googleusercontent.com/irV-MFa9_dLCrNLsyUPYTHFQAGdSh6ULBlsQpL48I9Ssbm-vflrZbkDWIlXsnv3xIL0EoFZroYo)
+![](https://lh3.googleusercontent.com/irV-MFa9_dLCrNLsyUPYTHFQAGdSh6ULBlsQpL48I9Ssbm-vflrZbkDWIlXsnv3xIL0EoFZroYo)
 
 **Performance Mobile**
-![enter image description here](https://lh3.googleusercontent.com/9n78gLdwH6P5jJArcnb9Vk1r_srGPIT7_FcUr1GwEljoRzZOsokSWUXHYEzfw_R-awV2uhWm4ao)
+![](https://lh3.googleusercontent.com/9n78gLdwH6P5jJArcnb9Vk1r_srGPIT7_FcUr1GwEljoRzZOsokSWUXHYEzfw_R-awV2uhWm4ao)
 **Nota:** Se puede notar que el performance en móvil se ve afectado por el uso de todo los estilos, excepto **Bootstrap**. La disminución es de **7 PUNTOS**.
 
 # Pruebas con estilos [Con bootstrap Default]
 A continuación se mostrará el impacto que tiene bootstrap en el performance, en este caso **agregaremos a Bootstrap predeterminado**, un vistazo al código antes de mostrar los resultados del performance.
-![enter image description here](https://lh3.googleusercontent.com/3xOxYSfzQ0kj3jnBFApgo2oSQZfORw8s5XikI1v_cE8iz9ceJ9JHkUG0KAUohN1coeFBDlJZnSU)
+![](https://lh3.googleusercontent.com/3xOxYSfzQ0kj3jnBFApgo2oSQZfORw8s5XikI1v_cE8iz9ceJ9JHkUG0KAUohN1coeFBDlJZnSU)
 **Nota:** se puede ver que la importación es de [**bootstrap.min.css**], cabe destacar que el **Bootstrap** de [**public/static/assets/scss/main.scss**] está deshabilitado.
 
 **Performance Computer**
-![enter image description here](https://lh3.googleusercontent.com/cBvrRlcbVSODWfzPy03lKGqUpFhmq1XfN4adpzlYe81mLg-RW3zXuL1dvOphh9Rm6lNib8YfmcI)
+![](https://lh3.googleusercontent.com/cBvrRlcbVSODWfzPy03lKGqUpFhmq1XfN4adpzlYe81mLg-RW3zXuL1dvOphh9Rm6lNib8YfmcI)
 
 **Performance Mobile**
-![enter image description here](https://lh3.googleusercontent.com/GaJrJHATHgtDceHgBsNFc4BUtdwWEj5WbZerPUzvCkQBHIMXLTV2eZkniy_zPKnMfijy_qcolpY)
+![](https://lh3.googleusercontent.com/GaJrJHATHgtDceHgBsNFc4BUtdwWEj5WbZerPUzvCkQBHIMXLTV2eZkniy_zPKnMfijy_qcolpY)
 **Nota:** Se puede notar que el performance en móvil se ve afectado por el uso de **Bootstrap default**. La disminución es de **16 PUNTOS** ante **85 PUNTOS**. 
 
 # Pruebas con estilos [Con bootstrap Custom]
 A continuación se mostrará el impacto que tiene bootstrap en el performance, en este caso **agregaremos a Bootstrap Custom**, esto quiere decir que deshabilitamos algunos estilos que no se están usando en la aplicación. un vistazo al código antes de mostrar los resultados del performance.
 
 **Nota:** Cabe destacar que cada estilo se deshabilito luego de hacer pruebas en el sistema. Si algún estilo deshabilitado se está usando en alguna página, no dude en habilitarlo.
-![enter image description here](https://lh3.googleusercontent.com/Tg8dcseDmk0h_DDPnRZ_4M3cQS4cGBBCBd716-JbWZLWA5M9LrwmrQDOJ1h9PKuex_fWaHu-qws)
+![](https://lh3.googleusercontent.com/Tg8dcseDmk0h_DDPnRZ_4M3cQS4cGBBCBd716-JbWZLWA5M9LrwmrQDOJ1h9PKuex_fWaHu-qws)
 **Nota:** se puede ver que la importación es de [**public/static/assets/scss/main.scss**], cabe destacar que el **Bootstrap** de [**_app.js**] está deshabilitado.
 
 **Performance Computer**
-![enter image description here](https://lh3.googleusercontent.com/miQdszEaISVAigeIi02h2tpyAYY9EMl39s-ueGnqaB78bm-A3d5p7wyrramQ00ojnhV3cpnow8Y)
+![](https://lh3.googleusercontent.com/miQdszEaISVAigeIi02h2tpyAYY9EMl39s-ueGnqaB78bm-A3d5p7wyrramQ00ojnhV3cpnow8Y)
 
 **Performance Mobile**
-![enter image description here](https://lh3.googleusercontent.com/Ft1WOWLt5zAdDMRSbAxAbr4VnEwaZxWd0r7QpWysGuUOWErLRVYioE68emM6GU_OnuYTLIEtqQ4)
+![](https://lh3.googleusercontent.com/Ft1WOWLt5zAdDMRSbAxAbr4VnEwaZxWd0r7QpWysGuUOWErLRVYioE68emM6GU_OnuYTLIEtqQ4)
 **Nota:** Se puede notar que el performance en móvil mejora en comparación con **Bootstrap default**. El aumento es de **6 PUNTOS** antes **69 PUNTOS**.
 
 ## Conclusión de estilos
