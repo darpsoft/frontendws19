@@ -5,7 +5,7 @@
 * El espacio donde se hicieron las pruebas es [https://qrcode-nextjs.herokuapp.com/]
 
 ###  SIN ESTILOS
-URL PRUEBA: [https://www.free-qr-code-generator.com/testing/t1_wrapper]
+URL PRUEBA: [https://qrcode-nextjs.herokuapp.com/testing/t1_wrapper]
 Detalles del código, todos los estilos deshabilitado
 ![](https://conceptodigital.net/asdasd/performance/editor_nada_css.png)
 A continuación se mostrará el performance sin estilos en la aplicación, cabe destacar que la aplicación posee todas las librerías instaladas del proyecto.
