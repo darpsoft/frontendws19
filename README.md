@@ -1,4 +1,4 @@
-# ¿QUE AFECTA AL PERFORMANCE DE MOVIL?
+# ¿QUÉ AFECTA AL PERFORMANCE EN MOVIL?
 
 * A continuación se mostrará el performance obtenido en distintas situaciones, cabe destacar que las pruebas se hicieron a través de la página web [https://developers.google.com/speed/pagespeed/insights/]. 
 * Todas las pruebas se hicieron en el servidor de Heroku
