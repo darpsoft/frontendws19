@@ -8,7 +8,7 @@
 		* **[57] PUNTOS COMPUTER**
 		* **[16] PUNTOS MOBIL**
 	* Ahora
-		* **[75] PUNTOS COMPUTER**
+		* **[83] PUNTOS COMPUTER**
 		* **[56] PUNTOS MOBIL**
 * La suma de todas las pruebas no dará como resultado el performance antes mencionado, recuerden que el performance varía según la información que se muestra al usuario, puede que algunos ejemplos den mejor performance por el simple hecho de renderizar la información de otro forma.
 
@@ -142,12 +142,6 @@ Un ejemplo de esto es la librería **`react-bootstrap-table`** este no se actual
 
 ### Librerías incompatibles
 Debido a que la tecnología que se está utilizando es nueva, hay algunas librerías que dejarán de ser compatibles, esto se debe a que estamos utilizando SSR. actualizando las librerías necesarias se puede obtener un performance y un rendimiento increíble. 
-
-### Bootstrap Custom
-Las aplicaciones basadas en Bootstrap son bastante pesadas y pueden ser lentas si no dedica tiempo a deshacerse de componentes innecesarios y scripts JS, por esto recomendamos analizar y deshacerse de aquellas que no se están utilizando
-
-### Migración de Bootstrap a Material UI ó Mdbootstrap
-En todos los ejemplos anteriores siempre quisimos dar a entender que la librería bootstrap no es la mejor opcion a la hora de trabajar con Next y React en 2020. Esto se debe a que la librería Bootstrap está diseñada para trabajar en todas las situaciones, esto quiere decir que no está especializada ó diseñada para React (En este caso) o otras tecnología, tiene incorporados muchos Script y estilos que puede que no se usen. Con Material UI es otra historia, ellos están especializados en muchas áreas y entre ella está React. Materíal UI posee componentes ya diseñados exclusivamente para el uso en React, gracias a esto se obtiene un mejor performance y rendimiento. 
 
 **Nota:** Nosotros analizamos cada dependencia instalada y por esto llegamos a esta conclusión, en algunos casos nos vimos obligado a cambiar de librería debido a la incompatibilidad con NEXT y REACT.
   
