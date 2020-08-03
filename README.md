@@ -8,7 +8,7 @@
 		* **[57] PUNTOS COMPUTER**
 		* **[16] PUNTOS MOBIL**
 	* Ahora
-		* **[83] PUNTOS COMPUTER**
+		* **[86] PUNTOS COMPUTER**
 		* **[56] PUNTOS MOBIL**
 * La suma de todas las pruebas no dará como resultado el performance antes mencionado, recuerden que el performance varía según la información que se muestra al usuario, puede que algunos ejemplos den mejor performance por el simple hecho de renderizar la información de otro forma.
 
